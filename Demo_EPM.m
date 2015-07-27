@@ -211,7 +211,7 @@ figure(100);subplot(2,3,4);imagesc(ProbAve-diag(diag(ProbAve)),[0,1]);title('(d)
 rng(state,'twister');
 [idx_train,idx_test,BTrain_Mask] = Create_Mask_network(B, TrainRatio);
 tic
-[AUCroc,AUCpr,F1,ProbAve,z]=irm_CRP(B,K, idx_train,idx_test,Burnin, Collections, IsDisplay, Datatype, Modeltype);
+[AUCroc,AUCpr,F1,ProbAve,z]=irm_CRP(B,K, idx_train,idx_test,Burnin, Collections, IsDisplay);
 fprintf('IRM, AUCroc =  %.4f, AUCpr = %.4f, Time = %.0f seconds \n',AUCroc,AUCpr,toc);
 
 if state==0
